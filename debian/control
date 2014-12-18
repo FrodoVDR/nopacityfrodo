@@ -1,0 +1,16 @@
+Source: skindesigner-skin-nopacityfrodo
+Section: misc
+Priority: extra
+Maintainer: Debian VDR Team <pkg-vdr-dvb-devel@lists.alioth.debian.org>
+Uploaders: Frodo <frodo.vdr@gmx.net>
+Build-Depends: debhelper (>= 9)
+Standards-Version: 3.9.3
+Homepage: 
+
+Package: skindesigner-skin-nopacityfrodo
+Replaces: skindesigner-theme-nopacityfrodo
+Breaks: skindesigner-theme-nopacityfrodo
+Architecture: all
+Depends: ${misc:Depends}, vdr-plugin-skindesigner (>= 0.0.6)
+Description: theme nopacityfrodo for skindesigner
+

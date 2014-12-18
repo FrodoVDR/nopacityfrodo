@@ -1,0 +1,4 @@
+debian/nopacityfrodo-default.theme var/lib/vdr/themes
+debian/nopacityfrodo-darkred.theme var/lib/vdr/themes
+themes/* usr/share/vdr/plugins/skindesigner/skins/nopacityfrodo/themes
+xmlfiles/* usr/share/vdr/plugins/skindesigner/skins/nopacityfrodo/xmlfiles

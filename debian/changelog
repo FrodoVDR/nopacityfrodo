@@ -1,4 +1,16 @@
-skindesigner-skin-nopacityfrodo (0.0.6.20141206.1036-0frodo0~trusty) trusty; urgency=low
+skindesigner-skin-nopacityfrodo (0.1.0.git20141218.1828-0frodo0~trusty) trusty; urgency=low
+
+  * New upstream snapshot (commit f59d469), build 0001
+
+ -- Frodo <frodo.vdr@gmx.net>  Thu, 18 Dec 2014 19:28:14 +0100
+
+skindesigner-skin-nopacityfrodo (0.1.0.git20141218.1826-0frodo0~precise) precise; urgency=low
+
+  * New upstream snapshot (commit f59d469), build 0001
+
+ -- Frodo <frodo.vdr@gmx.net>  Thu, 18 Dec 2014 19:27:14 +0100
+
+skindesigner-skin-nopacityfrodo (0.1.0.git20141206.1036-0frodo0~trusty) trusty; urgency=low
 
   * New upstream
 

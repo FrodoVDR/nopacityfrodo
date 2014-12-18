@@ -11,6 +11,6 @@ Package: skindesigner-skin-nopacityfrodo
 Replaces: skindesigner-theme-nopacityfrodo
 Breaks: skindesigner-theme-nopacityfrodo
 Architecture: all
-Depends: ${misc:Depends}, vdr-plugin-skindesigner (>= 0.0.6)
+Depends: ${misc:Depends}, vdr-plugin-skindesigner (>= 0.1.0)
 Description: theme nopacityfrodo for skindesigner
 

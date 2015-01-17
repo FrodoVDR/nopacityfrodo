@@ -28,8 +28,12 @@
                 <drawimage imagetype="menuicon" path="{icon}" x="10" valign="center" width="{areaheight}*0.9" height="{areaheight}*0.9"/>
             </area>
             <areascroll scrollelement="menutext" mode="forthandback" orientation="horizontal" delay="1000" scrollspeed="medium" x="25%" width="75%" layer="3">
+                <!--
                 <drawtext condition="not{current}" name="menutext" x="0" valign="center" font="{vdrOsd}" fontsize="50%" color="{clrFontMenuItem}" text="{number} {label}" />
                 <drawtext condition="{current}" name="menutext" x="0" valign="center" font="{vdrOsd}" fontsize="50%" color="{clrFontMenuItemSelected}" text="{number} {label}" />
+                -->
+                <drawtext condition="not{current}" name="menutext" x="0" valign="center" font="{vdrOsd}" fontsize="50%" color="{clrFontMenuItem}" text="{label}" />
+                <drawtext condition="{current}" name="menutext" x="0" valign="center" font="{vdrOsd}" fontsize="50%" color="{clrFontMenuItemSelected}" text="{label}" />
             </areascroll>
         </listelement>
         <!-- additional element which is drawn for current element -->

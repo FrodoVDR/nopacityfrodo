@@ -15,6 +15,7 @@ fi
 
 if [ -d ".git" ] ; then
 	git pull
+	GITCHANGE=$(git log --pretty=format:"%h: %s" -1)
 fi
 
 # VERSION_UPSTREAM=`grep 'static const char \*VERSION' skindesigner.c | sed -e 's/^.*=//g'  -e 's/[";]//g' -e 's/\s//g'`
@@ -74,6 +75,10 @@ do
 		rm -rf ${DEB_SOURCE_PACKAGE}
 
 		dch -b -D ${DISTRIBUTION} -v "${VERSION_FULL}-0frodo0~${DISTRIBUTION}" "New upstream snapshot (commit ${GIT_SHA}), build ${GITBUILD}"
+                dch "${GITCHANGE}"
+                mv ./debian/changelog ./debian/changelog.old
+                cat ./debian/changelog.old | head -6 > ./debian/changelog
+
 		break;
 	fi
 done

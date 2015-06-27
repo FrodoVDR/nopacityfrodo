@@ -28,7 +28,7 @@
     {timers[channelid]}          ChannelID of channel
     {timers[channellogoexists]}  true if channel logo exists
     -->
-    <timers>
+    <timers detached="true" delay="100" fadetime="0">
         <area x="85%" y="28%" width="14%" height="60%" layer="1">
             <drawrectangle condition="gt({numtimers}, 0)" x="0" y="0" width="{areawidth}" height="{areaheight} / 4 * 99 / 100" color="{clrTransBlack}" />
             <drawrectangle condition="gt({numtimers}, 1)" x="0" y="{areaheight} / 4" width="{areawidth}" height="{areaheight} / 4 * 99 / 100" color="{clrTransBlack}" />
@@ -38,7 +38,7 @@
         <area x="85%" y="28%" width="14%" height="60%" layer="2">
             <loop name="timers" x="0" y="0" orientation="vertical" columnwidth="100%" rowheight="{areaheight} / 4" overflow="cut">
                 <drawrectangle condition="{timers[recording]}" x="0" y="0" width="{columnwidth}" height="{rowheight} * 99 / 100" color="{clrTransRed}" />
-                <drawimage  cache="true" name="logo" imagetype="channellogo" path="{timers[channelid]}" width="98%" height="{rowheight} / 2" align="center" y="5" />
+                <drawimage  cache="true" name="logo" imagetype="channellogo" path="{timers[channelid]}" width="80%" height="{rowheight} / 2" align="center" y="5" />
                 <drawtextbox x="5" y="{height(logo)}+2" width="{columnwidth}-10" align="center" maxlines="2" font="{vdrOsd}" fontsize="4%" color="{clrWhite}" text="{timers[title]}" />
                 <drawtext name="datetime" align="center" y="{rowheight}*84/100" font="{vdrOsd}" fontsize="4%" color="{clrWhite}" text="{timers[datetime]}" />
             </loop>
@@ -49,7 +49,7 @@
         <area x="30%" y="11%" width="2%" height="78%" layer="2">
             <fill color="{clrBorder}" />
             <drawrectangle x="2" y="2" width="{areawidth} - 4" height="{areaheight} - 4" color="{clrTransparent}" />
-            <drawrectangle x="4" y="4 + {areaheight} * {offset} / 1000" width="{areawidth} - 8" height="{areaheight} * {height} / 1000 - 8" color="{clrProgressbar}" />
+            <drawrectangle x="4" y="4 + {areaheight} * {offset} / 1000" width="{areawidth} - 8" height="{areaheight} * {height} / 1000 - 8" color="{clrScrollbar}" />
         </area>
     </scrollbar>
 
@@ -61,8 +61,8 @@
     {discalert}               true if disc usage is > 95%
     {vdrusagestring}          localized VDR internal usage string
     -->
-    <discusage>
-        <area x="89%" y="11%" width="10%" height="16%" layer="1">
+    <discusage detached="true" delay="100" fadetime="0">
+        <area background="true" x="89%" y="11%" width="10%" height="16%" layer="1">
             <fill condition="lt({freepercent}, 6)" color="{clrTransRed}" />
             <fill condition="gt({freepercent}, 5)" color="{clrBackground}" />
             <drawimage imagetype="skinpart" path="discpercent" x="0" y="82%" width="{areawidth}" height="18%"/>
@@ -75,8 +75,8 @@
         </area>        
     </discusage>
 
-    <currentweather>
-        <area x="63%" y="11%" width="25%" height="16%" layer="1">
+    <currentweather detached="true" delay="100" fadetime="0">
+        <area background="true" x="63%" y="11%" width="25%" height="16%" layer="1">
             <fill color="{clrBackground}"/>
         </area>
         <area x="63%" y="11%" width="25%" height="16%" layer="2">
@@ -134,13 +134,9 @@
             <area x="0" width="100%" layer="3">
                 <drawimage imagetype="menuicon" path="{icon}" x="10" valign="center" width="{areaheight}*0.8" height="{areaheight}*0.8"/>
             </area>
-            <areascroll scrollelement="menutext" mode="forthandback" orientation="horizontal" delay="1000" scrollspeed="medium" x="23%" width="76%" layer="3">
-                <!--
+            <areascroll scrollelement="menutext" mode="forthandback" orientation="horizontal" delay="1000" scrollspeed="medium" x="23%" width="77%" layer="3">
                 <drawtext condition="not{current}" name="menutext" x="0" valign="center" font="{vdrOsd}" fontsize="50%" color="{clrFontMenuItem}" text="{number} {label}" />
                 <drawtext condition="{current}" name="menutext" x="0" valign="center" font="{vdrOsd}" fontsize="50%" color="{clrFontMenuItemSelected}" text="{number} {label}" />
-                -->
-                <drawtext condition="not{current}" name="menutext" x="0" valign="center" font="{vdrOsd}" fontsize="50%" color="{clrFontMenuItem}" text="{label}" />
-                <drawtext condition="{current}" name="menutext" x="0" valign="center" font="{vdrOsd}" fontsize="50%" color="{clrFontMenuItemSelected}" text="{label}" />
             </areascroll>
         </listelement>
         <!-- additional element which is drawn for current element -->

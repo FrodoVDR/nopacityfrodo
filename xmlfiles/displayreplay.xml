@@ -4,7 +4,7 @@
 <displayreplay x="0" y="0" width="100%" height="100%" fadetime="{fadeTime}">
 
     <background>
-        <area x="1%" y="74%" width="98%" height="25%" layer="1" transparency="{transparency}">
+        <area x="1%" y="74%" width="98%" height="25%" layer="1" transparency="20">
             <drawimage imagetype="skinpart" path="displayreplayback" x="0" y="0" width="100%" height="100%"/>
         </area>
         <area x="1%" y="74%" width="98%" height="25%" layer="7">
@@ -37,7 +37,7 @@
     -->
     <datetime>
         <area x="63%" y="74%" width="35%" height="6%" layer="2">
-            <drawtext align="right" valign="center" font="{vdrOsd}" fontsize="95%" color="{clrWhite}" width="100%" text="{daynameshort} {day}.{month} {time}" />
+            <drawtext align="right" valign="center" font="{regular}" fontsize="95%" color="{clrWhite}" width="100%" text="{daynameshort} {day}.{month} {time}" />
         </area>
     </datetime>
 
@@ -64,8 +64,8 @@
     -->
     <rectitle>
         <area x="3%" y="74%" width="60%" height="6%" layer="2">
-            <drawtext name="title" x="0" valign="center" font="{vdrOsd}" fontsize="95%" color="{clrWhite}" width="100%" text="{rectitle}" />
-            <drawtext condition="isset{recsubtitle}" x="{width(title)}" valign="center" font="{vdrOsd}" fontsize="95%" color="{clrWhite}" width="100%" text=" - {recsubtitle}" />
+            <drawtext name="title" x="0" valign="center" font="{regular}" fontsize="95%" color="{clrWhite}" width="100%" text="{rectitle}" />
+            <drawtext condition="isset{recsubtitle}" x="{width(title)}" valign="center" font="{regular}" fontsize="95%" color="{clrWhite}" width="100%" text=" - {recsubtitle}" />
         </area>
     </rectitle>
 
@@ -88,7 +88,7 @@
     -->
     <currenttime>
         <area x="3%" y="86%" width="30%" height="4%" layer="2">
-            <drawtext x="0" valign="center" font="{vdrOsd}" fontsize="100%" color="{clrWhite}" text="{reccurrent}" />
+            <drawtext x="0" valign="center" font="{regular}" fontsize="100%" color="{clrWhite}" text="{reccurrent}" />
         </area>
     </currenttime>
 
@@ -97,7 +97,7 @@
     -->
     <totaltime>
         <area x="67%" y="86%" width="30%" height="4%" layer="2">
-            <drawtext align="right" valign="center" font="{vdrOsd}" fontsize="100%" color="{clrWhite}" text="{rectotal}" />
+            <drawtext align="right" valign="center" font="{regular}" fontsize="100%" color="{clrWhite}" text="{rectotal}" />
         </area>
     </totaltime>
 
@@ -106,7 +106,7 @@
     {total}                     total frames of recording
     -->
     <progressbar>
-        <area x="3%" y="83%" width="94%" height="2%" layer="3">
+        <area x="3%" y="83%" width="94%" height="2%" layer="2">
             <drawellipse x="1" y="1" width="{areaheight}-2" height="{areaheight}-2" color="{clrProgressbar}" quadrant="0" />
             <drawrectangle x="{areaheight}/2" y="1" width="{current}/{total}*{areawidth} - {current}/{total}*{areaheight}" height="{areaheight}-2" color="{clrProgressbar}" />
         </area>
@@ -120,7 +120,7 @@
     {marks[startmark]}          true if mark is start mark
     -->
     <cutmarks>
-        <area x="3%" y="82%" width="94%" height="4%" layer="4">
+        <area x="3%" y="82%" width="94%" height="4%" layer="3">
             <loop name="marks" x="0" y="0" orientation="absolute">
                 <drawrectangle x="{marks[position]}/{marks[total]}*{areawidth}" y="0" width="1" height="100%" color="{clrTransWhite}" />
                 <drawrectangle condition="{marks[startmark]}" x="{marks[position]}/{marks[total]}*{areawidth}" y="0" width="5" height="1" color="{clrTransWhite}" />
@@ -193,7 +193,7 @@
     -->
     <jump>
         <area x="5%" y="90%" width="30%" height="7%" layer="2">
-            <drawtext align="center" valign="center" font="{vdrOsd}" fontsize="80%" color="{clrWhite}" text="{jump}" />
+            <drawtext align="center" valign="center" font="{regular}" fontsize="80%" color="{clrWhite}" text="{jump}" />
         </area>
     </jump>
     <!-- Available Variables message:
@@ -204,14 +204,14 @@
     {error}                    true if message is a error message
     -->
     <message>
-        <area x="5%" y="88%" width="90%" height="10%" layer="6">
+        <area x="5%" y="58%" width="90%" height="15%" layer="6">
             <drawimage condition="{status}" imagetype="skinpart" path="messageStatus" x="0" y="0" width="100%" height="100%" />
             <drawimage condition="{info}" imagetype="skinpart" path="messageInfo" x="0" y="0" width="100%" height="100%" />
             <drawimage condition="{warning}" imagetype="skinpart" path="messageWarning" x="0" y="0" width="100%" height="100%" />
             <drawimage condition="{error}" imagetype="skinpart" path="messageError" x="0" y="0" width="100%" height="100%" />
         </area>
-        <area x="5%" y="88%" width="90%" height="10%" layer="7">
-            <drawtext align="center" valign="center" font="{light}" fontsize="50%" color="{clrWhite}" text="{text}" />
+        <area x="5%" y="58%" width="90%" height="15%" layer="7">
+            <drawtext align="center" valign="center" font="{light}" fontsize="40%" color="{clrWhite}" text="{text}" />
         </area>
     </message>
 
@@ -334,7 +334,7 @@
             <fill color="{clrTransBlackDark}" />
         </area>
         <area x="0" y="0" width="100%" height="100%" layer="6">
-            <drawtext align="center" valign="center" font="{vdrOsd}" fontsize="25%" color="{clrWhite}" text="{tr(pause)}" />
+            <drawtext align="center" valign="center" font="{regular}" fontsize="25%" color="{clrWhite}" text="{tr(pause)}" />
             <drawimage condition="{isseries}" imagetype="image" path="{seriesbanner1path}" align="center" y="10" width="{areawidth}*0.5" height="{areawidth} * 0.5 * {seriesbanner1height} / {seriesbanner1width}"/>
             <drawimage condition="{ismovie}" imagetype="image" path="{posterpath}" x="10" y="10" width="{areaheight} * 0.4  * {posterwidth} / {posterheight}" height="{areaheight} * 0.4"/>
         </area>

@@ -265,5 +265,7 @@
     if an invalid font is used in a template, vdrOsd is used as default.
     -->
     <fonts>
+        <font name="light">VDROpen Sans Light:Light</font>
+        <font name="semibold">VDROpen Sans Semibold:Semibold</font>
     </fonts>
 </globals>

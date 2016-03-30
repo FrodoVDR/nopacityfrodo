@@ -44,7 +44,7 @@
                 <drawimage condition="{current}" imagetype="skinpart" path="menubuttondefaultactive" x="0" y="1%" width="{areawidth}" height="{areaheight}*0.98"/>
             </area>
             <areascroll scrollelement="column1" mode="forthandback" orientation="horizontal" delay="1000" scrollspeed="medium" x="1%" width="{column1width}" layer="3">
-                <drawtext condition="not{current}" name="column1" x="{column1x}" width="{column1width}" valign="center" font="{regular}"  fontsize="80%" color="{clrFontMenuItem}" text="{column1}" />
+                <drawtext condition="not{current}" x="{column1x}" width="{column1width}" valign="center" font="{regular}" fontsize="80%" color="{clrFontMenuItem}" text="{column1}" />
                 <drawtext condition="{current}" name="column1" x="{column1x}" width="{column1width}" valign="center" font="{regular}" fontsize="80%" color="{clrFontMenuItemSelected}" text="{column1}" />
             </areascroll>
             <area x="1%" width="100%" layer="3">

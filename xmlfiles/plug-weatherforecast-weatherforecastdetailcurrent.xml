@@ -15,7 +15,7 @@
         <area x="97%" y="25%" width="2%" height="60%" layer="2">
             <fill color="{clrBorder}" />
             <drawrectangle x="2" y="2" width="{areawidth} - 4" height="{areaheight} - 4" color="{clrTransparent}" />
-            <drawrectangle x="4" y="4 + {areaheight} * {offset} / 1000" width="{areawidth} - 8" height="{areaheight} * {height} / 1000 - 8" color="{clrProgressbar}" />
+            <drawrectangle x="4" y="4 + {areaheight} * {offset} / 1000" width="{areawidth} - 8" height="{areaheight} * {height} / 1000 - 8" color="{clrScrollbar}" />
         </area>
     </scrollbar>
     <!-- Available Variables in detailheader and tab:
@@ -49,8 +49,8 @@
         <area x="1%" y="10%" width="97%" height="15%" layer="3">
             <drawimage name="weathericon" imagetype="icon" path="{icon}" align="right" valign="center" width="{areaheight}*0.7" height="70%"/>
             <drawtext name="temp" x="{areawidth} - {width(weathericon)} - {width(temp)} - 10" valign="center" font="{regular}" fontsize="50%" color="{clrWhite}" text="{temperature}°C" />
-            <drawtext x="2%" y="20%" font="{semibold}" fontsize="35%" color="{clrWhite}" text="{tr(conditions)} {tr(for)} {city}, {timestamp}:" />
-            <drawtext x="2%" y="55%" font="{semibold}" fontsize="35%" color="{clrWhite}" text="{summary}" />
+            <drawtext x="2%" y="20%" font="{regular}" fontsize="35%" color="{clrWhite}" text="{tr(conditions)} {tr(for)} {city}, {timestamp}:" />
+            <drawtext x="2%" y="55%" font="{regular}" fontsize="35%" color="{clrWhite}" text="{summary}" />
         </area>
     </detailheader>
 

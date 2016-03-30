@@ -50,7 +50,7 @@
     <viewelement name="footer">
         <area condition="{red1}" x="0" y="90%" width="25%" height="10%" layer="2">
             <drawimage imagetype="skinpart" path="buttonred" align="center" valign="center" width="90%" height="40%"/>
-            <drawtext align="center" valign="center" font="{regular}" fontsize="35%" color="{clrWhite}" text="{red}" />
+            <drawtext align="center" valign="center" font="{vdrOsd}" fontsize="35%" color="{clrWhite}" text="{red}" />
         </area>
         <area condition="{green1}" x="0" y="90%" width="25%" height="10%" layer="2">
             <drawimage imagetype="skinpart" path="buttongreen" align="center" valign="center" width="90%" height="40%"/>

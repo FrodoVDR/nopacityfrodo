@@ -21,7 +21,7 @@
         {numrecordingsfolder}   if item is a folder, number of recordings in this folder
         {newrecordingsfolder}   if item is a folder, number of new recordings in this folder
         {hasposterthumbnail}    true if a scraped poster thumbnail is available for recording
-        {thumbnailbwidth}       width of scraped poster thumbnail
+        {thumbnailwidth}        width of scraped poster thumbnail
         {thumbnailheight}       height of scraped poster thumbnail
         {thumbnailpath}         absolute path of scraped poster thumbnail
         -->
@@ -36,15 +36,15 @@
                 <drawimage name="foldericon" imagetype="icon" path="ico_recfolder" x="0" width="0.9*{areaheight} * 92 / 136" height="0.9*{areaheight}" valign="center" />
             </area>
             <areascroll condition="{folder}" scrollelement="foldername" mode="forthandback" orientation="horizontal" delay="1000" scrollspeed="medium" x="5%" width="23%" layer="3">
-                <drawtext condition="not{current}" name="foldername" x="0" valign="center" font="{regular}" fontsize="40%" color="{clrFontMenuItem}" text="{name} ({numrecordingsfolder}, {newrecordingsfolder} new)" />
+                <drawtext condition="not{current}" x="0" valign="center" font="{regular}" fontsize="50%" color="{clrFontMenuItem}" text="{name} ({numrecordingsfolder}, {newrecordingsfolder} new)" />
                 <drawtext condition="{current}" name="foldername" x="0" valign="center" font="{regular}" fontsize="40%" color="{clrFontMenuItemSelected}" text="{name} ({numrecordingsfolder}, {newrecordingsfolder} new)" />
             </areascroll>
             <!-- Recording -->
             <area condition="{hasposterthumbnail}++not{folder}" x="1%" width="4%" layer="3">
-                <drawimage imagetype="image" path="{thumbnailpath}" x="0" width="0.9*{areaheight} * {thumbnailbwidth} / {thumbnailheight}" height="0.9*{areaheight}" valign="center" />
+                <drawimage imagetype="image" path="{thumbnailpath}" x="0" width="0.9*{areaheight} * {thumbnailwidth} / {thumbnailheight}" height="0.9*{areaheight}" valign="center" />
             </area>
             <areascroll condition="not{folder}" scrollelement="recname" mode="forthandback" orientation="horizontal" delay="1000" scrollspeed="medium" x="5%" width="23%" layer="3">
-                <drawtext condition="not{current}" name="recname" x="0" y="5" font="{regular}" fontsize="40%" color="{clrFontMenuItem}" text="{name}" />
+                <drawtext condition="not{current}" x="0" y="5" font="{regular}" fontsize="40%" color="{clrFontMenuItem}" text="{name}" />
                 <drawtext condition="{current}" name="recname" x="0" y="5" font="{regular}" fontsize="40%" color="{clrFontMenuItemSelected}" text="{name}" />
             </areascroll>
             <area condition="not{folder}" x="5%" width="23%" layer="3">

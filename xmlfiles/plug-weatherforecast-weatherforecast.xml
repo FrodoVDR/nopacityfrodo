@@ -6,7 +6,7 @@
         <area x="30%" y="11%" width="2%" height="78%" layer="2">
             <fill color="{clrBorder}" />
             <drawrectangle x="2" y="2" width="{areawidth} - 4" height="{areaheight} - 4" color="{clrTransparent}" />
-            <drawrectangle x="4" y="4 + {areaheight} * {offset} / 1000" width="{areawidth} - 8" height="{areaheight} * {height} / 1000 - 8" color="{clrProgressbar}" />
+            <drawrectangle x="4" y="4 + {areaheight} * {offset} / 1000" width="{areawidth} - 8" height="{areaheight} * {height} / 1000 - 8" color="{clrScrollbar}" />
         </area>
     </scrollbar>
 
@@ -107,7 +107,7 @@
             </area>
             <area condition="{iscurrent}" x="32%" y="2%" width="67%" height="96%" layer="3">
                 <drawimage name="weathericon" imagetype="icon" path="{icon}" x="2%" y="0" width="{areawidth}*0.2" height="{areawidth}*0.2"/>
-                <drawtext align="right" y="2%" font="{semibold}" fontsize="6%" color="{clrWhite}" text="{city}" />
+                <drawtext align="right" y="2%" font="{regular}" fontsize="6%" color="{clrWhite}" text="{city}" />
                 <drawtext align="right" y="8%" font="{regular}" fontsize="6%" color="{clrWhite}" text="{timestamp}" />
                 <drawtext align="right" y="14%" font="{regular}" fontsize="12%" color="{clrWhite}" text="{temperature}°C" />
                 <drawtext align="right" y="26%" font="{regular}" fontsize="6%" color="{clrWhite}" text="{summary}" />
@@ -121,7 +121,7 @@
             </area>
             <area condition="{ishourly}" x="32%" y="2%" width="67%" height="96%" layer="3">
                 <loop name="hourly" x="0" y="0" orientation="vertical" columnwidth="{areawidth}" rowheight="{areaheight}/12" overflow="cut">
-                    <drawtext x="2%" font="{semibold}" fontsize="7%" valign="center" color="{clrWhite}" text="{hourly[timestamp]}" />
+                    <drawtext x="2%" font="{regular}" fontsize="7%" valign="center" color="{clrWhite}" text="{hourly[timestamp]}" />
                     <drawimage imagetype="icon" path="{hourly[icon]}" x="22%" valign="center" width="{rowheight}*0.8" height="{rowheight}*0.8"/>
                     <drawtext x="35%" font="{regular}" fontsize="7%" valign="center" color="{clrWhite}" text="{hourly[temperature]}°C" />
                     <drawtext x="60%" font="{regular}" fontsize="5%" valign="center" width="38%" color="{clrWhite}" text="{hourly[summary]}" />
@@ -130,7 +130,7 @@
             </area>
             <area condition="{isdaily}" x="32%" y="2%" width="67%" height="96%" layer="3">
                 <loop name="daily" x="2%" y="0" orientation="vertical" columnwidth="{areawidth}*0.96" rowheight="{areaheight}/7" overflow="cut">
-                    <drawtext x="0" font="{semibold}" fontsize="{rowheight}/2" y="5" color="{clrWhite}" text="{daily[dayname]} {daily[day]}" />
+                    <drawtext x="0" font="{regular}" fontsize="{rowheight}/2" y="5" color="{clrWhite}" text="{daily[dayname]} {daily[day]}" />
                     <drawtext x="35%" font="{regular}" fontsize="{rowheight}/2" y="5" color="{clrWhite}" text="{daily[temperaturemin]}°C - {daily[temperaturemax]}°C" />
                     <drawtext x="0" font="{regular}" fontsize="{rowheight}*0.3" width="{columnwidth} - {rowheight}*0.7" y="{rowheight}*0.6" color="{clrWhite}" text="{daily[summary]}" />
                     <drawimage imagetype="icon" path="{daily[icon]}" x="{columnwidth} - {rowheight}*0.7" valign="center" width="{rowheight}*0.7" height="{rowheight}*0.7"/>
